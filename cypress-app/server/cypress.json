@@ -1,0 +1,41 @@
+{
+    "local": 8080,
+    "boot": {},
+    "downstreamMiddleware": [
+        {
+            "paths": ["/hello-world"],
+            "middleware": "../middleware/downstream.js"
+        }
+    ],
+    "upstreamMiddleware": [
+        {
+            "middleware": "../middleware/upstream.js"
+        }
+    ],
+    "routes": {
+        "/hello-world": {
+            "methods": ["GET", "POST"],
+            "middleware": "../apis/hello-world.js",
+            "tasks": {
+                "parallel": [
+                    {
+                        "methods": ["GET", "POST"],
+                        "middleware": "../utils/taskparallel.js",
+                        "tasks": {}
+                    }
+                ],
+                "seriel": [
+                    {
+                        "methods": ["GET", "POST"],
+                        "middleware": "../utils/task.js",
+                        "tasks": {}
+                    }
+                ]
+            }
+        },
+        "/cypress": {
+            "methods": ["GET"],
+            "middleware": "../apis/cypress-framework-api.js"
+        }
+    }
+}
