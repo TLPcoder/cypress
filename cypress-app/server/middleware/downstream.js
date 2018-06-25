@@ -1,7 +1,7 @@
 'use strict'
 
 const downstream = (ctx) => {
-    console.log('downstream bro')
+    console.log('downstream')
     console.log('ctx.body', ctx.body)
 } 
 

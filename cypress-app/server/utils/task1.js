@@ -1,7 +1,7 @@
 'use strict'
 
 const task = async (ctx, next) => {
-    ctx.task = 'task here bro'
+    return Promise.resolve(console.log('seriel task 1'))
 }
 
 module.exports = task

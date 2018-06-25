@@ -1,6 +1,5 @@
 {
     "local": 8080,
-    "boot": {},
     "downstreamMiddleware": [
         {
             "paths": ["/hello-world"],
@@ -28,7 +27,22 @@
                     {
                         "methods": ["GET", "POST"],
                         "middleware": "../utils/task.js",
-                        "tasks": {}
+                        "tasks": {
+                            "seriel": [
+                                {
+                                    "methods": ["GET", "POST"],
+                                    "middleware": "../utils/task1.js",
+                                    "tasks": {
+                                        "seriel": [
+                                            {
+                                                "methods": ["GET", "POST"],
+                                                "middleware": "../utils/task2.js"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
                     }
                 ]
             }
