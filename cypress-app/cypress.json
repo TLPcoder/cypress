@@ -1,0 +1,20 @@
+{
+    "local": 8080,
+    "routes": {
+        "/hello-world": {
+            "methods": ["GET", "POST"],
+            "middlewarePath": "./server/apis/hello-world.js",
+            "tasks": {
+                "_": "lodash",
+                "task1": "./server/utils/task1",
+                "task2": "./server/utils/task2",
+                "task3": "./server/utils/task3",
+                "task4": "./server/utils/task4"
+            }
+        },
+        "/cypress": {
+            "methods": ["GET"],
+            "middlewarePath": "./server/apis/cypress-framework-api.js"
+        }
+    }
+}
