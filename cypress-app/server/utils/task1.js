@@ -1,7 +1,7 @@
 'use strict'
 
 const task1 = async (ctx, next) => {
-    // console.log('serial task 1')
+    console.log('serial task 1')
     // ctx.body = 'task1'
     // return Promise.resolve(console.log('serial task 1'))
     // return ctx

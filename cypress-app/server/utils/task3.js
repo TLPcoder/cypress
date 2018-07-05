@@ -1,7 +1,7 @@
 'use strict'
 
 const task3 = async (ctx, next) => {
-    // console.log('serial task 3')
+    console.log('serial task 3')
     // ctx.answer = 3
     // return 3
     // return Promise.resolve(console.log('serial task 3'))
